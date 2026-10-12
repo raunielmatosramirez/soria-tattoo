@@ -1,0 +1,345 @@
+@import "tailwindcss";
+@import "react-day-picker/style.css";
+
+/* ─────────────────────────────────────────────
+   PALETA DEL ESTUDIO DE TATUAJES
+   ───────────────────────────────────────────── */
+:root {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+}
+
+@theme inline {
+  /* Fuentes del sistema (sin next/font por ahora) */
+  --font-display: "Cinzel", "Georgia", "Times New Roman", serif;
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Colores base del template */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* ─── Colores custom del estudio ─── */
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #141414;
+  --color-ink-line: #2a2a2a;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c766;
+
+  --color-smoke: #f5f5f5;
+  --color-muted: #a0a0a0;
+  --color-disabled: #3a3a3a;
+  --color-error: #e74c3c;
+}
+
+/* ─────────────────────────────────────────────
+   BASE
+   ───────────────────────────────────────────── */
+
+/* Solo smooth scroll si el usuario no pidió reducir movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Foco visible dorado para accesibilidad */
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE: elimina delay de tap y highlight azul
+   ───────────────────────────────────────────── */
+button,
+a,
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Anclas: deja espacio debajo del header sticky */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* ─────────────────────────────────────────────
+   OVERRIDES DE REACT-DAY-PICKER
+   (para que no rompa el diseño custom)
+   ───────────────────────────────────────────── */
+.rdp-root {
+  --rdp-accent-color: var(--color-gold);
+  --rdp-accent-background-color: var(--color-gold);
+  --rdp-day-height: auto;
+  --rdp-day-width: auto;
+  --rdp-day_button-height: auto;
+  --rdp-day_button-width: 100%;
+  --rdp-months-gap: 0;
+  --rdp-nav_button-height: auto;
+  --rdp-nav_button-width: auto;
+  --rdp-outside-opacity: 0;
+}
+
+.rdp-root .rdp-month_caption {
+  justify-content: space-between;
+}
+
+.rdp-root .rdp-day_button {
+  border: none;
+  background: transparent;
+}
+
+/* ─────────────────────────────────────────────
+   ANIMACIÓN DE BARRA DE PROGRESO (vista de éxito)
+   ───────────────────────────────────────────── */
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+/* ─────────────────────────────────────────────
+   REACT-DAY-PICKER: OVERRIDES COMPLETOS
+   ───────────────────────────────────────────── */
+.rdp-custom-root {
+  --rdp-accent-color: var(--color-gold);
+  --rdp-accent-background-color: var(--color-gold);
+  --rdp-day-height: auto;
+  --rdp-day-width: auto;
+  --rdp-day_button-height: auto;
+  --rdp-day_button-width: 100%;
+  --rdp-months-gap: 0;
+  --rdp-nav_button-height: auto;
+  --rdp-nav_button-width: auto;
+  --rdp-outside-opacity: 0;
+  width: 100%;
+}
+
+.rdp-custom-months,
+.rdp-custom-month {
+  width: 100%;
+}
+
+.rdp-custom-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-caption {
+    margin-bottom: 2rem;
+  }
+}
+
+.rdp-custom-caption-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-smoke);
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-caption-label {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .rdp-custom-caption-label {
+    font-size: 1.875rem;
+  }
+}
+
+.rdp-custom-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rdp-custom-nav-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: 1px solid;
+  transition: background-color 0.15s;
+  touch-action: manipulation;
+  font-size: 1.125rem;
+  background: transparent;
+}
+
+.rdp-custom-nav-enabled {
+  border-color: rgba(212, 175, 55, 0.4);
+  color: var(--color-gold);
+  cursor: pointer;
+}
+
+.rdp-custom-nav-enabled:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.rdp-custom-nav-enabled:active {
+  background-color: rgba(212, 175, 55, 0.2);
+}
+
+.rdp-custom-nav-disabled {
+  border-color: var(--color-ink-line);
+  color: var(--color-disabled);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.rdp-custom-grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rdp-custom-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-weekdays {
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.rdp-custom-weekday {
+  text-align: center;
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding: 0.25rem 0;
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-weekday {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    padding: 0.5rem 0;
+  }
+}
+
+.rdp-custom-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-week {
+    gap: 0.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .rdp-custom-week {
+    gap: 0.5rem;
+  }
+}
+
+.rdp-custom-day {
+  aspect-ratio: 1 / 1;
+  padding: 0;
+}
+
+.rdp-custom-day-button {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: background-color 0.15s;
+  touch-action: manipulation;
+  user-select: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+
+@media (min-width: 640px) {
+  .rdp-custom-day-button {
+    font-size: 1rem;
+  }
+}
+
+/* Modifiers custom */
+.rdp-available .rdp-custom-day-button {
+  border: 1px solid transparent;
+  color: var(--color-smoke);
+  cursor: pointer;
+}
+
+.rdp-available .rdp-custom-day-button:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.rdp-available .rdp-custom-day-button:active {
+  background-color: rgba(212, 175, 55, 0.2);
+}
+
+.rdp-partial .rdp-custom-day-button {
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--color-smoke);
+  cursor: pointer;
+}
+
+.rdp-partial .rdp-custom-day-button:hover {
+  background-color: rgba(212, 175, 55, 0.25);
+}
+
+.rdp-partial .rdp-custom-day-button:active {
+  background-color: rgba(212, 175, 55, 0.35);
+}
+
+.rdp-unavailable .rdp-custom-day-button {
+  color: var(--color-disabled);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.rdp-custom-selected .rdp-custom-day-button {
+  background-color: var(--color-gold) !important;
+  color: var(--color-ink) !important;
+  font-weight: 500;
+  border-color: var(--color-gold) !important;
+}
+
+.rdp-custom-today .rdp-custom-day-button {
+  font-weight: 700;
+}
+
+.rdp-custom-disabled .rdp-custom-day-button {
+  color: var(--color-disabled);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.rdp-custom-outside,
+.rdp-custom-hidden {
+  visibility: hidden;
+}

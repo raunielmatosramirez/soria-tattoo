@@ -1,0 +1,26 @@
+{
+  "config": {
+    "horarios": [
+      "10:00",
+      "11:00",
+      "12:00",
+      "14:00",
+      "15:00",
+      "16:00",
+      "17:00",
+      "18:00"
+    ],
+    "diasCerrado": [0],
+    "anticipacionMinimaDias": 0,
+    "maxDiasFuturo": 60
+  },
+  "turnos": [
+    { "fecha": "2026-10-15", "hora": "10:00", "nombre": "María López" },
+    { "fecha": "2026-10-15", "hora": "11:00", "nombre": "Carlos Martínez" },
+    { "fecha": "2026-10-15", "hora": "12:00", "nombre": "Lucía Fernández" },
+    { "fecha": "2026-10-15", "hora": "14:00", "nombre": "Pedro Sánchez" },
+    { "fecha": "2026-10-17", "hora": "15:00", "nombre": "Juan Pérez" },
+    { "fecha": "2026-10-17", "hora": "16:00", "nombre": "Ana Gómez" },
+    { "fecha": "2026-11-02", "hora": "11:00", "nombre": "Lucas Díaz" }
+  ]
+}
