@@ -200,7 +200,7 @@ export default function Calendar({
 
       <div className='mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-ink-line flex flex-wrap gap-3 sm:gap-6 text-[10px] sm:text-xs text-muted'>
         <div className='flex items-center gap-2'>
-          <span className='w-3 h-3 rounded-sm border border-gold' />
+          <span className='w-3 h-3 rounded-sm border bg-gold' />
           Disponible
         </div>
         <div className='flex items-center gap-2'>

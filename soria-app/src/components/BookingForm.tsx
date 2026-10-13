@@ -156,7 +156,7 @@ export default function BookingForm({
           </p>
         </div>
         <h3 className='font-display text-xl sm:text-2xl md:text-3xl text-smoke'>
-          Confirmá tus datos
+          Confirma tus datos
         </h3>
       </div>
 
@@ -174,7 +174,7 @@ export default function BookingForm({
           </p>
         ) : (
           <p className='text-muted text-sm'>
-            Elegí un día y horario para continuar.
+            Elige un día y horario para continuar.
           </p>
         )}
       </div>

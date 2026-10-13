@@ -31,15 +31,14 @@ export default function BookingSection({
               Reservá tu <span className='text-gold'>turno</span>.
             </h2>
             <p className='text-muted text-sm md:text-base max-w-sm'>
-              Elegí el día y horario que más te convenga. Confirmamos por
+              Elige el día y horario que más te convenga. Confirmamos por
               WhatsApp.
             </p>
           </div>
 
           {/* Aviso sobre disponibilidad */}
           <p className='text-muted text-sm max-w-2xl border-l-2 border-gold/40 pl-4'>
-            La disponibilidad mostrada puede variar hasta la confirmación por
-            WhatsApp.
+            La disponibilidad puede variar hasta la confirmación por WhatsApp.
           </p>
         </div>
 

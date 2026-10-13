@@ -31,7 +31,7 @@ export default function About() {
             </h2>
 
             <p className='text-muted text-base md:text-lg leading-relaxed mb-4'>
-              En {NOMBRE_ESTUDIO} trabajamos con dedicación y detalle. Cada
+              En {NOMBRE_ESTUDIO} se trabaja con dedicación y detalle. Cada
               pieza se piensa desde cero contigo, respetando tu idea y
               adaptándola al estilo que mejor te represente.
             </p>
@@ -71,10 +71,10 @@ export default function About() {
             />
             <div className='relative aspect-[4/5] overflow-hidden rounded-sm'>
               <Image
-                src='https://picsum.photos/seed/tattoo-about/800/1000?grayscale'
+                src='/studio-soria.jpeg'
                 alt='Interior del estudio de tatuajes'
                 fill
-                sizes='(max-width: 768px) 100vw, 50vw'
+                sizes='(max-width: 768px) 90vw, 50vw'
                 className='object-cover object-center'
               />
             </div>

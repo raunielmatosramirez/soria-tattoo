@@ -6,9 +6,9 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Estudio Tinta — Turnos",
+  title: "Coraje tattoo — Turnos",
   description:
-    "Reservá tu turno en Estudio Tinta. Tatuajes personalizados en Buenos Aires. Elegí día y horario, y coordinamos por WhatsApp.",
+    "Reserva tu turno en Coraje tattoo. Tatuajes personalizados en Buenos Aires. Elige el día y horario, y coordinamos por WhatsApp.",
   keywords: [
     "tatuajes",
     "estudio de tatuajes",
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "Buenos Aires",
     "reservar turno",
   ],
-  authors: [{ name: "Estudio Tinta" }],
+  authors: [{ name: "Coraje tattoo" }],
   openGraph: {
-    title: "Estudio Tinta — Turnos",
-    description: "Reservá tu turno online. Coordinamos por WhatsApp.",
+    title: "Coraje tattoo — Turnos",
+    description: "Reserva tu turno online. Coordinamos por WhatsApp.",
     type: "website",
-    locale: "es_AR",
+    locale: "es",
   },
 };
 

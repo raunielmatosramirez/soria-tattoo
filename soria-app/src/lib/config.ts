@@ -7,7 +7,7 @@
 // 👇 CAMBIAR ACÁ EL NÚMERO DE WHATSAPP (formato internacional, sin + ni espacios)
 export const WHATSAPP_NUMERO = "+53 55161541";
 
-export const NOMBRE_ESTUDIO = "Estudio Tinta";
+export const NOMBRE_ESTUDIO = "Coraje tattoo";
 export const INSTAGRAM_URL = "https://instagram.com/soria.art94";
 
 // 👇 Dirección del estudio (texto visible + base del mapa)
