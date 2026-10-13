@@ -1,6 +1,6 @@
 // src/components/Hero.tsx
 // Server Component. Hero responsive con dirección de arte.
-// Usa next/image y next/link. Mobile-first.
+// Incluye líneas doradas decorativas estilo tatuaje con animación de dibujo.
 
 import Image from "next/image";
 import Link from "next/link";
@@ -24,25 +24,96 @@ export default function Hero() {
         aria-hidden='true'
       />
 
-      {/* Gradiente principal: más oscuro abajo, más claro arriba */}
+      {/* Gradiente principal */}
       <div
         className='absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/80 to-ink'
         aria-hidden='true'
       />
-
-      {/* Gradiente lateral: oscuro a la izquierda (donde va el texto) */}
+      {/* Gradiente lateral */}
       <div
         className='absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent'
         aria-hidden='true'
       />
-
-      {/* Viñeta radial para enfocar */}
+      {/* Viñeta radial */}
       <div
         className='absolute inset-0'
         style={{
           background:
             "radial-gradient(ellipse at center, transparent 0%, rgba(10,10,10,0.5) 100%)",
         }}
+        aria-hidden='true'
+      />
+
+      {/* ─── LÍNEAS DECORATIVAS (tatuaje) ─── */}
+
+      {/* Curva grande abajo-derecha */}
+      <svg
+        className='absolute bottom-0 right-0 w-[60%] h-[60%] text-gold/20 pointer-events-none hidden md:block'
+        viewBox='0 0 800 600'
+        fill='none'
+        aria-hidden='true'
+      >
+        <path
+          d='M 100 500 Q 300 200 500 350 T 800 100'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          className='animate-draw'
+        />
+        <path
+          d='M 150 550 Q 350 250 550 400 T 800 150'
+          stroke='currentColor'
+          strokeWidth='0.8'
+          strokeLinecap='round'
+          className='animate-draw-delay-1'
+        />
+      </svg>
+
+      {/* Curva pequeña arriba-derecha */}
+      <svg
+        className='absolute top-[15%] right-[8%] w-40 h-40 text-gold/30 pointer-events-none hidden md:block'
+        viewBox='0 0 200 200'
+        fill='none'
+        aria-hidden='true'
+      >
+        <path
+          d='M 20 180 Q 100 20 180 100'
+          stroke='currentColor'
+          strokeWidth='1'
+          strokeLinecap='round'
+          className='animate-draw-delay-2'
+        />
+      </svg>
+
+      {/* Curva vertical izquierda */}
+      <svg
+        className='absolute top-[20%] left-[3%] w-24 h-64 text-gold/15 pointer-events-none hidden lg:block'
+        viewBox='0 0 100 400'
+        fill='none'
+        aria-hidden='true'
+      >
+        <path
+          d='M 50 20 Q 20 200 50 380'
+          stroke='currentColor'
+          strokeWidth='1'
+          strokeLinecap='round'
+          className='animate-draw-delay-3'
+        />
+      </svg>
+
+      {/* Puntos decorativos (como gotas de tinta) */}
+      <div
+        className='absolute top-[30%] right-[15%] w-2 h-2 rounded-full bg-gold/30 pointer-events-none hidden md:block animate-pulse'
+        aria-hidden='true'
+      />
+      <div
+        className='absolute top-[45%] right-[8%] w-1.5 h-1.5 rounded-full bg-gold/40 pointer-events-none hidden md:block animate-pulse'
+        style={{ animationDelay: "0.5s" }}
+        aria-hidden='true'
+      />
+      <div
+        className='absolute bottom-[25%] right-[25%] w-1 h-1 rounded-full bg-gold/25 pointer-events-none hidden md:block animate-pulse'
+        style={{ animationDelay: "1s" }}
         aria-hidden='true'
       />
 
@@ -60,7 +131,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Título — tipografía fluida con clamp() */}
+          {/* Título */}
           <h1
             className='font-display text-smoke leading-[0.95] mb-5 sm:mb-6 whitespace-nowrap'
             style={{

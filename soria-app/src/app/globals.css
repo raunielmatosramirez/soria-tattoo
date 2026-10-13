@@ -343,3 +343,51 @@ section[id] {
 .rdp-custom-hidden {
   visibility: hidden;
 }
+/* ─────────────────────────────────────────────
+   ANIMACIÓN DE DIBUJO (para las líneas del Hero)
+   ───────────────────────────────────────────── */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Cada línea se "dibuja" al cargar */
+.animate-draw {
+  stroke-dasharray: 1200;
+  animation: draw 3s ease-out forwards;
+}
+
+/* Variantes con delay para que no salgan todas juntas */
+.animate-draw-delay-1 {
+  stroke-dasharray: 1200;
+  animation: draw 3s ease-out 0.3s forwards;
+  stroke-dashoffset: 1200;
+}
+
+.animate-draw-delay-2 {
+  stroke-dasharray: 1200;
+  animation: draw 3s ease-out 0.6s forwards;
+  stroke-dashoffset: 1200;
+}
+
+.animate-draw-delay-3 {
+  stroke-dasharray: 1200;
+  animation: draw 3s ease-out 0.9s forwards;
+  stroke-dashoffset: 1200;
+}
+
+/* Respeta a quien prefiere no tener animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .animate-draw,
+  .animate-draw-delay-1,
+  .animate-draw-delay-2,
+  .animate-draw-delay-3 {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
