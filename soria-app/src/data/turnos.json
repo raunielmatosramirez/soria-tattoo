@@ -87,8 +87,10 @@
         "moneda": "USD",
         "categoria": "pinturas",
         "material": "Acrílico sobre tela",
-        "imagenes": ["/productos/cuadro-1.jpg", "/productos/cuadro-2.jpg"],
-
+        "imagenes": [
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": true,
         "stock": 1
       },
@@ -100,7 +102,10 @@
         "moneda": "USD",
         "categoria": "ceramica",
         "material": "Cerámica esmaltada",
-        "imagenes": ["/productos/jarron-rosa.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=800&q=80&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": true,
         "stock": 3
       },
@@ -112,7 +117,10 @@
         "moneda": "USD",
         "categoria": "grabados",
         "material": "Aguafuerte sobre papel",
-        "imagenes": ["/productos/grabado-tinta.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": false,
         "stock": 20
       },
@@ -124,7 +132,10 @@
         "moneda": "USD",
         "categoria": "esculturas",
         "material": "Bronce y mármol",
-        "imagenes": ["/productos/escultura-circulo.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=800&q=80&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1544413660-299165566b1d?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": true,
         "stock": 1
       },
@@ -136,7 +147,9 @@
         "moneda": "USD",
         "categoria": "ilustraciones",
         "material": "Tinta china sobre papel",
-        "imagenes": ["/productos/ilustracion-mano.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1515405295579-ba7b45403062?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": false,
         "stock": 2
       },
@@ -148,7 +161,10 @@
         "moneda": "USD",
         "categoria": "pinturas",
         "material": "Óleo y pan de oro sobre tabla",
-        "imagenes": ["/productos/cuadro-ojo.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=800&q=80&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1579783928621-7a13d66a6218?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": false,
         "stock": 1
       },
@@ -160,7 +176,9 @@
         "moneda": "USD",
         "categoria": "ceramica",
         "material": "Cerámica esmaltada",
-        "imagenes": ["/productos/plato-fuego.jpg"],
+        "imagenes": [
+          "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=800&q=80&auto=format&fit=crop"
+        ],
         "destacado": false,
         "stock": 4
       }
