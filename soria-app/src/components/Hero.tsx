@@ -1,6 +1,6 @@
 // src/components/Hero.tsx
 // Server Component. Hero responsive con dirección de arte.
-// Incluye líneas doradas decorativas estilo tatuaje con animación de dibujo.
+// Incluye líneas doradas decorativas y un ícono de tienda antes del título.
 
 import Image from "next/image";
 import Link from "next/link";
@@ -101,7 +101,7 @@ export default function Hero() {
         />
       </svg>
 
-      {/* Puntos decorativos (como gotas de tinta) */}
+      {/* Puntos decorativos */}
       <div
         className='absolute top-[30%] right-[15%] w-2 h-2 rounded-full bg-gold/30 pointer-events-none hidden md:block animate-pulse'
         aria-hidden='true'
@@ -130,6 +130,44 @@ export default function Hero() {
               {UBICACION}
             </p>
           </div>
+
+          {/* ─── ÍCONO DE TIENDA (antes del nombre) ─── */}
+          <Link
+            href='/shop'
+            aria-label='Ir a la tienda de arte'
+            className='inline-flex items-start gap-3 mb-5 group touch-manipulation'
+          >
+            {/* Círculo más chico y en gris */}
+            <div className='relative w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-smoke/5 border border-smoke/20 backdrop-blur flex items-center justify-center group-hover:bg-gold/10 group-hover:border-gold/50 transition-all mt-0.5'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='18'
+                height='18'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='1.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='text-muted group-hover:text-gold group-hover:scale-110 transition-all'
+                aria-hidden='true'
+              >
+                <path d='M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z' />
+                <path d='M3 6h18' />
+                <path d='M16 10a4 4 0 0 1-8 0' />
+              </svg>
+            </div>
+
+            {/* Textos al lado */}
+            <div className='flex flex-col'>
+              <span className='text-muted text-[10px] sm:text-xs tracking-[0.3em] uppercase group-hover:text-gold transition-colors font-medium'>
+                Shop
+              </span>
+              <span className='text-muted/60 text-[9px] sm:text-[10px] tracking-wide'>
+                Visitanos y descubre el arte que vendemos...
+              </span>
+            </div>
+          </Link>
 
           {/* Título */}
           <h1
