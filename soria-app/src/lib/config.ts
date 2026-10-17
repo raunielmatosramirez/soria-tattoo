@@ -18,4 +18,4 @@ export const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encod
 
 export const HORARIOS_ATENCION = "Lun a Sáb de 10 a 19 hs";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://soria-tattoo.vercel.app/";
