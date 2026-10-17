@@ -2,7 +2,7 @@
 // Funciones PURAS (sin hooks, sin side-effects) que calculan
 // disponibilidad, formatean fechas y arman el mensaje de WhatsApp.
 
-import type { TurnosData, DayInfo, DayStatus, BookingFormData } from "./types";
+import type { TurnosData, DayInfo, DayStatus } from "./types";
 
 // ─────────────────────────────────────────────
 // HELPERS INTERNOS
@@ -202,7 +202,7 @@ export function formatFechaLarga(iso: string): string {
   return `${dia} ${date.getDate()} de ${mes}`;
 }
 
-/** "15:00" → "15:00" (placeholder por si después querés 12h) */
+/** "15:00" → "3:00 PM" */
 export function formatHora(hora: string): string {
   const [hStr, mStr] = hora.split(":");
   const h = parseInt(hStr, 10);
@@ -214,41 +214,6 @@ export function formatHora(hora: string): string {
 // ─────────────────────────────────────────────
 // WHATSAPP
 // ─────────────────────────────────────────────
-
-/**
- * Arma el mensaje de WhatsApp con todos los datos del formulario.
- * El formato exacto está definido en el plan del proyecto.
- */
-export function buildWhatsAppMessage(
-  form: BookingFormData,
-  fechaISO: string,
-  hora: string,
-): string {
-  const lineas: string[] = [
-    "¡Hola! Quiero reservar un turno 🖤",
-    "",
-    `📅 Fecha: ${formatFecha(fechaISO)}`,
-    `🕐 Hora: ${formatHora(hora)}`,
-    "",
-    `👤 Nombre: ${form.nombre}`,
-    `📱 Teléfono: ${form.telefono}`,
-    `📧 Email: ${form.email || "No especificado"}`,
-    "",
-    `🎨 Estilo: ${form.estilo}`,
-    `📍 Zona: ${form.zona}`,
-    `📏 Tamaño: ${form.tamano ? `${form.tamano} cm` : "No especificado"}`,
-    `🔄 Cover-up: ${form.coverUp === "si" ? "Sí" : "No"}`,
-    `✨ Primer tatuaje: ${form.primerTatuaje === "si" ? "Sí" : "No"}`,
-    "",
-    `💡 Idea: ${form.descripcion}`,
-    `🔗 Referencia: ${form.referencia || "No especificado"}`,
-    `⚠️ Alergias/Condiciones: ${form.alergias || "Ninguna"}`,
-    "",
-    "✅ Acepto que el turno se confirma con seña.",
-  ];
-
-  return lineas.join("\n");
-}
 
 /** Arma la URL final de wa.me con el mensaje encodeado. */
 export function buildWhatsAppUrl(numero: string, mensaje: string): string {
