@@ -22,5 +22,148 @@
     { "fecha": "2026-10-17", "hora": "15:00", "nombre": "Juan Pérez" },
     { "fecha": "2026-10-17", "hora": "16:00", "nombre": "Ana Gómez" },
     { "fecha": "2026-11-02", "hora": "11:00", "nombre": "Lucas Díaz" }
-  ]
+  ],
+  "tienda": {
+    "nombre": "Soria Arte",
+    "descripcion": "Piezas únicas de arte para llevar a casa.",
+    "opcionesEnvio": {
+      "gestores": [
+        {
+          "id": "habana-envio",
+          "nombre": "Envío La Habana",
+          "municipio": "La Habana",
+          "descripcion": "Entrega puerta a puerta en 24-48 horas dentro de la capital.",
+          "precio": 0,
+          "precioTexto": "Cotizar por WhatsApp"
+        },
+        {
+          "id": "mensajeria-privada",
+          "nombre": "Mensajería privada",
+          "municipio": "Todas las provincias",
+          "descripcion": "Coordinamos con un mensajero de confianza para entregas especiales.",
+          "precio": 0,
+          "precioTexto": "Cotizar por WhatsApp"
+        }
+      ],
+      "retiro": {
+        "habilitado": true,
+        "direccion": "Calle 23 #456, Vedado, La Habana",
+        "horarios": "Lun a Sáb de 9 a 17 hs"
+      }
+    },
+    "categorias": [
+      {
+        "id": "pinturas",
+        "nombre": "Pinturas",
+        "descripcion": "Obras originales sobre lienzo, tabla o papel."
+      },
+      {
+        "id": "ceramica",
+        "nombre": "Cerámica",
+        "descripcion": "Piezas únicas modeladas y esmaltadas a mano."
+      },
+      {
+        "id": "grabados",
+        "nombre": "Grabados",
+        "descripcion": "Impresiones de edición limitada en distintas técnicas."
+      },
+      {
+        "id": "esculturas",
+        "nombre": "Esculturas",
+        "descripcion": "Obras tridimensionales en distintos materiales."
+      },
+      {
+        "id": "ilustraciones",
+        "nombre": "Ilustraciones",
+        "descripcion": "Dibujos y piezas sobre papel, tinta y acuarela."
+      }
+    ],
+    "productos": [
+      {
+        "id": "prod-001",
+        "nombre": "Cuadro 'Serpiente y Daga'",
+        "descripcion": "Pintura original en acrílico sobre tela. 50x70 cm.",
+        "precio": 280,
+        "moneda": "USD",
+        "categoria": "pinturas",
+        "material": "Acrílico sobre tela",
+        "imagenes": ["/productos/cuadro-1.jpg", "/productos/cuadro-2.jpg"],
+
+        "destacado": true,
+        "stock": 1
+      },
+      {
+        "id": "prod-002",
+        "nombre": "Jarrón 'Rosa y Espina'",
+        "descripcion": "Cerámica modelada a mano, esmaltada en tonos tierra.",
+        "precio": 95,
+        "moneda": "USD",
+        "categoria": "ceramica",
+        "material": "Cerámica esmaltada",
+        "imagenes": ["/productos/jarron-rosa.jpg"],
+        "destacado": true,
+        "stock": 3
+      },
+      {
+        "id": "prod-003",
+        "nombre": "Grabado 'Tinta y Sombra'",
+        "descripcion": "Aguafuerte sobre papel de algodón. Edición de 20.",
+        "precio": 120,
+        "moneda": "USD",
+        "categoria": "grabados",
+        "material": "Aguafuerte sobre papel",
+        "imagenes": ["/productos/grabado-tinta.jpg"],
+        "destacado": false,
+        "stock": 20
+      },
+      {
+        "id": "prod-004",
+        "nombre": "Escultura 'Círculo Roto'",
+        "descripcion": "Escultura abstracta en bronce, base de mármol.",
+        "precio": 450,
+        "moneda": "USD",
+        "categoria": "esculturas",
+        "material": "Bronce y mármol",
+        "imagenes": ["/productos/escultura-circulo.jpg"],
+        "destacado": true,
+        "stock": 1
+      },
+      {
+        "id": "prod-005",
+        "nombre": "Ilustración 'Mano y Flor'",
+        "descripcion": "Dibujo original en tinta china sobre papel. 30x40 cm.",
+        "precio": 75,
+        "moneda": "USD",
+        "categoria": "ilustraciones",
+        "material": "Tinta china sobre papel",
+        "imagenes": ["/productos/ilustracion-mano.jpg"],
+        "destacado": false,
+        "stock": 2
+      },
+      {
+        "id": "prod-006",
+        "nombre": "Cuadro 'Ojo de Tigre'",
+        "descripcion": "Óleo sobre tabla con detalles en pan de oro. 40x40 cm.",
+        "precio": 380,
+        "moneda": "USD",
+        "categoria": "pinturas",
+        "material": "Óleo y pan de oro sobre tabla",
+        "imagenes": ["/productos/cuadro-ojo.jpg"],
+        "destacado": false,
+        "stock": 1
+      },
+      {
+        "id": "prod-007",
+        "nombre": "Plato decorativo 'Fuego'",
+        "descripcion": "Plato de cerámica con esmalte reactivo. Pieza única.",
+        "precio": 65,
+        "moneda": "USD",
+        "categoria": "ceramica",
+        "material": "Cerámica esmaltada",
+        "imagenes": ["/productos/plato-fuego.jpg"],
+        "destacado": false,
+        "stock": 4
+      }
+    ]
+  }
 }

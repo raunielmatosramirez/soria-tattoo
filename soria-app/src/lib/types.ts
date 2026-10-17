@@ -1,60 +1,100 @@
 // src/lib/types.ts
 // Tipos centrales del proyecto. TypeScript estricto: sin `any`.
 
-/** Un turno ya reservado (leído desde turnos.json). */
+// ─────────────────────────────────────────────
+// TATUAJES / TURNOS
+// ─────────────────────────────────────────────
+
 export type Turno = {
-  fecha: string; // YYYY-MM-DD
-  hora: string; // HH:MM
-  nombre?: string; // informativo, no afecta disponibilidad
+  fecha: string;
+  hora: string;
+  nombre?: string;
 };
 
-/** Configuración del estudio (leída desde turnos.json). */
 export type Config = {
-  horarios: string[]; // ["10:00", "11:00", ...]
-  diasCerrado: number[]; // 0=domingo ... 6=sábado
+  horarios: string[];
+  diasCerrado: number[];
   anticipacionMinimaDias: number;
   maxDiasFuturo: number;
 };
 
-/** Estructura completa del archivo turnos.json. */
+export type DayStatus =
+  | "available"
+  | "partial"
+  | "full"
+  | "closed"
+  | "past"
+  | "future-limit";
+
+export type DayInfo = {
+  iso: string;
+  day: number;
+  month: number;
+  year: number;
+  weekday: number;
+  status: DayStatus;
+  freeSlots: string[];
+  occupiedSlots: string[];
+};
+
+// ─────────────────────────────────────────────
+// TIENDA DE ARTE
+// ─────────────────────────────────────────────
+
+export type Categoria = {
+  id: string;
+  nombre: string;
+  descripcion?: string;
+};
+
+export type Producto = {
+  id: string;
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  moneda: string;
+  categoria: string;
+  material: string;
+  imagenes: string[]; // 👈 AHORA ES UN ARRAY
+  destacado: boolean;
+  stock: number;
+};
+
+// ─────────────────────────────────────────────
+// DATA GLOBAL (Turnos + Tienda)
+// ─────────────────────────────────────────────
+
 export type TurnosData = {
   config: Config;
   turnos: Turno[];
+  tienda: Tienda;
 };
+// src/lib/types.ts
 
-/** Estado posible de un día en el calendario. */
-export type DayStatus =
-  | "available" // sin turnos ocupados
-  | "partial" // algunos horarios ocupados
-  | "full" // todos los horarios ocupados
-  | "closed" // día cerrado por configuración
-  | "past" // antes de la anticipación mínima
-  | "future-limit"; // más allá del límite de días futuros
-
-/** Info calculada de un día para renderizar en el calendario. */
-export type DayInfo = {
-  iso: string; // YYYY-MM-DD
-  day: number; // 1-31
-  month: number; // 0-11
-  year: number;
-  weekday: number; // 0=domingo ... 6=sábado
-  status: DayStatus;
-  freeSlots: string[]; // horarios libres
-  occupiedSlots: string[]; // horarios ocupados
-};
-
-/** Datos del formulario de reserva. */
-export type BookingFormData = {
+export type GestorEnvio = {
+  id: string;
   nombre: string;
-  telefono: string;
-  email: string;
-  estilo: string;
-  zona: string;
-  tamano: string;
-  coverUp: "si" | "no";
-  primerTatuaje: "si" | "no";
+  municipio: string;
   descripcion: string;
-  referencia: string;
-  alergias: string;
-  aceptaSenia: boolean;
+  precio: number;
+  precioTexto?: string;
+};
+
+export type Retiro = {
+  habilitado: boolean;
+  direccion: string;
+  horarios: string;
+};
+
+export type OpcionesEnvio = {
+  gestores: GestorEnvio[];
+  retiro: Retiro;
+};
+
+export type Tienda = {
+  nombre: string;
+  descripcion: string;
+  categorias: Categoria[];
+  productos: Producto[];
+  opcionesEnvio: OpcionesEnvio; // 👈 NUEVO
 };
